@@ -1,6 +1,10 @@
 # HashMap实现原理
+下图为Hashtable的实现方式
 ![](image/hashtable.jpg)
-
+可以看到，hashtable的实现是数组+链表的结构，图为长度为16的数组存储的是链表的头节点,决定链表内的数据存储内容的实现一般是通过hash(key)%length,也就是元素的大小除以数组的长度，比如12%16=12  28%16=12  108%16=12  140%16=12 那么12、28、108、140均存储在12的位置。
+<br>
+<br>
+对HashMap而言，HashMap几乎可以等价于Hashtable，除了HashMap是非synchronized(同步)的，并可以接受null(HashMap可以接受为null的键值(key)和值(value)，而Hashtable则不行)
 
 **1)put**
 <pre><code>
